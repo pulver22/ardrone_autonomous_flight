@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   tf
+  deep_reinforced_landing
 )
 
 ## System dependencies are found with CMake's conventions
@@ -85,7 +86,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ARL_Ardrone_control
-  CATKIN_DEPENDS ardrone_autonomy geometry_msgs roscpp sensor_msgs std_msgs tf
+  CATKIN_DEPENDS ardrone_autonomy geometry_msgs roscpp sensor_msgs std_msgs tf deep_reinforced_landing
 #  DEPENDS system_lib
 )
 
@@ -109,7 +110,7 @@ include_directories(
  add_executable(flight src/flight.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
- add_dependencies(flight ardrone_autonomy)
+ add_dependencies(flight ardrone_autonomy deep_reinforced_landing)
 
 
 
